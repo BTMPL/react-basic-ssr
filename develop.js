@@ -5,7 +5,7 @@ var app = express();
 app.set('view engine', 'pug');
 
 var webpack = require('webpack');
-var config = require('./webpack.config.js')(process.env);
+var config = require('./config/webpack.develop.js')(process.env);
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {

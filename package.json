@@ -5,13 +5,15 @@
   "license": "MIT",
   "scripts": {
     "develop": "node develop.js",
-    "build": "webpack --env.NODE_ENV=development",
-    "build:prod": "webpack --env.NODE_ENV=production",
-    "server": "babel-node server.js"
+    "watch": "webpack --watch --config config/webpack.ssr.js --env.NODE_ENV=production",
+    "build:client": "webpack --config config/webpack.develop.js --env.NODE_ENV=production",
+    "build:ssr": "webpack --config config/webpack.ssr.js --env.NODE_ENV=production",
+    "server": "node server.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@mdx-js/loader": "^0.15.0",
@@ -20,13 +22,15 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.0.0",
     "express": "^4.16.3",
+    "prop-types": "^15.6.2",
     "pug": "^2.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "styled-components": "^3.4.5",
     "webpack": "^4.17.1",
     "webpack-dev-middleware": "^3.2.0",
-    "webpack-hot-middleware": "^2.23.0"
+    "webpack-hot-middleware": "^2.23.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "webpack-cli": "^3.1.0"

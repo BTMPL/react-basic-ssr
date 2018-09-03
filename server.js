@@ -1,25 +1,29 @@
-import React from 'react';
-import express from 'express';
-import path from 'path';
-import { Home } from './src/App';
 
-import { renderToString } from 'react-dom/server';
-import { ServerLocation } from '@reach/router';
+const express = require('express');
+const path = require('path');
 
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+const renderUrl = require('./dist/server.js').default;
+
+process.env.NODE_ENV = 'production';
+
+var webpack = require('webpack');
+var config = require('./config/webpack.ssr.js')(process.env);
+var compiler = webpack(config);
+
 
 const app = express();
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
 
 app.set('view engine', 'pug');
 
 app.use('/', express.static(path.join(__dirname, 'dist')));
 
-app.get('*', (req, res) => {
-  const sheet = new ServerStyleSheet()
-  const html = renderToString(
-    
-        <Home />     
-  );
+app.get('*', (req, res) => {  
+  const { html, sheet } = renderUrl(req.url);;
 
   res.render(path.join(__dirname, 'src/public/index.pug'), {
     css: sheet.getStyleTags(),    
