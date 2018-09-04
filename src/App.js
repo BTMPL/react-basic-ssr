@@ -19,9 +19,10 @@ const P = styled.p`
 `
 
 const index = [
-  { name: "Section 1", slug: "section-1" },
-  { name: "Section 2", slug: "section-2" },
-  { name: "Section 3", slug: "section-3" }
+  { name: "Podstawowe pojęcia", slug: "section-1" },
+  { name: "Środowisko NodeJS", slug: "section-2" },
+  { name: "Narzedzia wspomagające", slug: "section-3" },
+  { name: "create react app", slug: "section-4" }
 ];
 
 export default () => {

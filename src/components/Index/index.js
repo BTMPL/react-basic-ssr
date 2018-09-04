@@ -43,13 +43,14 @@ export default class extends React.Component {
 
   isSectionActive = slug => {
     if (typeof document === 'undefined') return;
-    return;
+
     // fins the last hidden section
     let foundActive = 0;
 
     this.props.index.forEach((item, index) => {
       // the first one, we always skip - we will use that one as default
       if (index === 0) return;
+
 
       const element = this.props.selector(item);
       if (!element) return;

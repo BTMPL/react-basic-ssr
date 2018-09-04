@@ -16,7 +16,7 @@ export const Aside = styled.div`
     left: 50%;
     margin-left: -350px;
     transform: translateX(calc(-100% - 20px));
-    width: 200px;  
+    width: 210px;  
     transition: 0.25s all;
   }
 `;

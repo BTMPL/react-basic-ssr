@@ -7,11 +7,11 @@ const Avatar = styled.img`
   height: 45px;
   border: 2px solid #d3d3d3;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: hidden;  
 `;
 
 const BioElement = styled.div`
-  font-size: 0.875rem;
+  font-size: 0.875rem;  
 `;
 
 export default ({
@@ -19,8 +19,15 @@ export default ({
 }) => (
   <BioElement>
     <Avatar src="https://github.com/btmpl.png" alt="Bartosz Szczeciński" />
-    {children ? children : <p>
-      Zarówno ilość developerów, jak i ofert pracy dla developerów React rośnie praktycznie nieprzerwanie od 2013 roku 1. Pojawiają się kolejne dziedziny w, w których React ma zastosowanie - React Native (Android, iOS, Windows Mobile), React Native for Windows, ReactVR czy Xbox (przy użyciu Universal Windows Platform).
-    </p>}
+    {children ? children : (
+      <React.Fragment>
+        <p>
+          Hej - nazywam się <b>Bartosz Szczeciński</b> i od wielu lat jestem związany z&nbsp;technologiami webowymi, głównie w&nbsp;obszarze frontendu.
+        </p>
+        <p>
+          Jestem zafascynowany <b>Reactem</b> i jego wpływem na tworzenie aplikacji w&nbsp;przeglądarkach. Poza codzienną pracą z tą technologią chętnie dzielę się swoją wiedzą z innymi na blogu, szkoleniach czy platformach on-line dla społeczności!
+        </p>
+      </React.Fragment>
+    )}
   </BioElement>
 )

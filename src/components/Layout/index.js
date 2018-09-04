@@ -43,6 +43,29 @@ injectGlobal`
   pre {
     overflow: auto;
     max-width: 700px;
+    background: #000;
+    padding: 5px 10px;
+    color: white;
+    font-size: 0.9rem;
+
+    @media screen and (max-width: 768px) {
+      max-width: calc(100vw - 0.875rem - 0.875rem);
+    }
+  }
+
+  pre + small {
+    display: block;
+    background: #909090;
+    color: white;
+    padding: 5px;
+    margin-top: -15px;    
+  }
+
+  blockquote {
+    padding: 1px 15px;
+    margin: 15px 0;
+    background: #fff7d0;
+    border-left: 5px solid #ffe564;
   }
 `
 
@@ -67,6 +90,7 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   flex: 1;
+  padding: 0 0.875rem;
 `;
 
 export const Header = styled.div`
