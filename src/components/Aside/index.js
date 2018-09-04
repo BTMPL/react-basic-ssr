@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const AsideContainer = styled.div`
   position: relative;
+  margin-bottom: 1rem;
 `;
 
 export const Aside = styled.div`
@@ -16,7 +17,6 @@ export const Aside = styled.div`
     margin-left: -350px;
     transform: translateX(calc(-100% - 20px));
     width: 200px;  
-    background: red;
     transition: 0.25s all;
   }
 `;

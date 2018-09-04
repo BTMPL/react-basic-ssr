@@ -1,5 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const IndexElement = styled.div`
+  margin-bottom: 1rem;
+`;
 
 export default class extends React.Component {
   static propTypes = {
@@ -73,7 +78,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
+      <IndexElement>
         {this.props.index.map(item => {
           return (
             <div
@@ -86,7 +91,7 @@ export default class extends React.Component {
             </div>
           );
         })}
-      </div>
+      </IndexElement>
     );
   }
 }

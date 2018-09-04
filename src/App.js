@@ -8,6 +8,7 @@ import Layout, { Row, Col, Header } from './components/Layout';
 import Hero from './components/Hero';
 import Aside from './components/Aside';
 import Index from './components/Index';
+import Bio from './components/Bio';
 
 import Hello from './hello.md';
 
@@ -61,14 +62,17 @@ export class Home extends React.Component {
 
     return (
       <Aside aside={
-        <Index
-          index={index}
-          padding={padding}
-          selector={({ slug }) => document.querySelector(`a[name=${slug}]`)}
-          onClick={({ slug }) => {
-            window.scrollTo(0, document.querySelector(`a[name=${slug}]`).getBoundingClientRect().top + window.pageYOffset - (padding / 2));
-          }}
-        />} 
+        <React.Fragment>
+          <Index
+            index={index}
+            padding={padding}
+            selector={({ slug }) => document.querySelector(`a[name=${slug}]`)}
+            onClick={({ slug }) => {
+              window.scrollTo(0, document.querySelector(`a[name=${slug}]`).getBoundingClientRect().top + window.pageYOffset - (padding / 2));
+            }}
+          />
+          <Bio />
+        </React.Fragment>} 
       fixedStyles={{
         top: 'calc(50px + 1rem)'
       }}>      
