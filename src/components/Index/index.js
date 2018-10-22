@@ -1,24 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link as RRLink } from '@reach/router';
 
 const IndexElement = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+`;
+
+const Link = styled(RRLink)`
+  display: block;
+  border-left: 4px solid transparent;
+  padding-left: 5px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 5px;
+
+  ${props => props.active && 'border-left-color: #0098ff;'}
+`;
+
+const Level = styled.div``;
+const SubLevel = styled.div`
+  margin-left: 10px;
 `;
 
 export default class extends React.Component {
   static propTypes = {
     padding: PropTypes.number,
-    selector: PropTypes.func.isRequired,
+    selector: PropTypes.func,
     index: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired
       })
     )
   };
+
   static defaultProps = {
-    padding: 30
+    padding: 30,
+    selector: () => null,
+    onClick: null
   };
 
   componentDidMount() {
@@ -41,7 +61,13 @@ export default class extends React.Component {
     }, 50);
   };
 
-  isSectionActive = slug => {
+  isSectionActive = ({
+    slug,
+    active
+  }) => {
+    if (typeof active !== undefined) {
+      return active;
+    }
     if (typeof document === 'undefined') return;
 
     // fins the last hidden section
@@ -77,21 +103,19 @@ export default class extends React.Component {
     }
   }
 
+  renderLevel = (item) => {
+    return (
+      <Level key={item.slug}>
+        <Link active={this.isSectionActive(item)} to={`${item.slug}`} onClick={(event) => this.handleClick(event, item)}>{item.title}</Link>
+        {item.items && (this.isSectionActive(item) || this.props.expand) && <SubLevel>{item.items.map(this.renderLevel)}</SubLevel>}
+      </Level>
+    );   
+  }
+
   render() {
     return (
       <IndexElement>
-        {this.props.index.map(item => {
-          return (
-            <div
-              style={{
-                fontWeight: this.isSectionActive(item.slug) ? "bold" : undefined
-              }}
-              key={item.slug}
-            >
-              <a href={`#${item.slug}`} onClick={(event) => this.handleClick(event, item)}>{item.name}</a>
-            </div>
-          );
-        })}
+        {this.props.index.map(this.renderLevel)}
       </IndexElement>
     );
   }

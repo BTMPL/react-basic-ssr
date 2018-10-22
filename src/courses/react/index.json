@@ -1,0 +1,192 @@
+{
+  "title": "Kurs Rect",
+  "slug": "/kursy/react",
+
+  "lessons": [
+    {
+      "title": "Podstawy",
+      "slug": "podstawy",
+      "directory": "lesson1",
+      "items": [
+        {
+          "title": "Podstawowe pojecia",
+          "slug": "podstawowe-pojecia",
+          "file": "01-basic.md"
+        },
+        {
+          "title": "Środowisko NodeJS",
+          "slug": "srodowisko-nodejs",
+          "file": "02-nodejs.md"
+        },
+        {
+          "title": "Narzędzia wspomagające",
+          "slug": "narzedzia-wspomagajace",
+          "file": "03-tools.md"
+        },
+        {
+          "title": "create react app",
+          "slug": "create-react-app",
+          "file": "04-create-react-app.md"
+        }
+      ]
+    },
+    {
+      "title": "Szybki kurs ES6 i ESNext",
+      "slug": "szybki-kurs-es6-i-esnext",
+      "directory": "lesson2",
+      "items": [
+        {
+          "title": "const, let",
+          "slug": "const-let",
+          "file": "01-const.md"
+        },
+        {
+          "title": "Template string, tagged template strings",
+          "slug": "template-strings",
+          "file": "02-templates.md"
+        },
+        {
+          "title": "Arrow functions",
+          "slug": "arrow-functions",
+          "file": "03-arrow-functions.md"
+        },
+        {
+          "title": "Parametry domyśne, destructuring i rest",
+          "slug": "parametry-domyslne-destructuring",
+          "file": "04-default.md"
+        },
+        {
+          "title": "Skrócona notacja obiektowa, dynamiczne właściwości obiektu, spread",
+          "slug": "shorthand-object-notation-i-spread",
+          "file": "05-object.md"
+        },
+        {
+          "title": "Klasy",
+          "slug": "klasy",
+          "file": "06-class.md"
+        },
+        {
+          "title": "Moduły",
+          "slug": "esm",
+          "file": "07-esm.md"
+        },
+        {
+          "title": "Kod asynchroniczny - Promise",
+          "slug": "promise",
+          "file": "08-promise.md"
+        },
+        {
+          "title": "Dekoratory",
+          "slug": "dekoratory",
+          "file": "09-decorators.md"
+        }
+      ]      
+    },
+    {
+      "title": "Wprowadzenie do React",
+      "slug": "wprowadzenie",
+      "directory": "lesson3",
+      "items": [
+        {
+          "title": "ReactDOM",
+          "slug": "react-dom",
+          "file": "01-react-dom.md"
+        },
+        {
+          "title": "JSX",
+          "slug": "jsx",
+          "file": "02-jsx.md"
+        },
+        {
+          "title": "Komponenty",
+          "slug": "komponenty",
+          "file": "03-komponenty.md"
+        },
+        {
+          "title": "Kompozycja",
+          "slug": "kompozycja",
+          "file": "04-kompozycja.md"
+        }                        
+      ]
+    },
+    {
+      "title": "Interakcja z komponentami",
+      "slug": "interakcja",
+      "directory": "lesson4",
+      "items": [
+        {
+          "title": "Przekazywanie danych w relacji rodzic : dziecko",
+          "slug": "przekazywanie-danych-rodzic-dziecko",
+          "file": "01-pass-props.md"
+        },
+        {
+          "title": "propTypes i defaultProps",
+          "slug": "proptypes-i-defaultprops",
+          "file": "02-proptypes.md"
+        },
+        {
+          "title": "Listy komponentów",
+          "slug": "listy-komponentow",
+          "file": "03-list-of-components.md"
+        },
+        {
+          "title": "Listy komponentów - renderowanie bez rodzica",
+          "slug": "react-fragment",
+          "file": "04-no-parent-render.md"
+        },
+        {
+          "title": "Formularz niekontrolowane, referencje",
+          "slug": "niekontrolowane-formularze-i-referencje",
+          "file": "05-uncontrolled-forms.md"
+        },
+        {
+          "title": "Zdarzenia",
+          "slug": "zdarzenia",
+          "file": "06-events.md"
+        },
+        {
+          "title": "Stan komponentu",
+          "slug": "state",
+          "file": "07-state.md"
+        },
+        {
+          "title": "Cykl życia komponentu",
+          "slug": "cykl-zycia-lifecycle",
+          "file": "08-lifecycle.md"
+        },
+        {
+          "title": "Przekazywanie danych do rodzica i rodzeństwa",
+          "slug": "lift-state-up",
+          "file": "09-lift-state.md"
+        }
+      ]
+    },
+    {
+      "title": "Receptury",
+      "slug": "receptury",
+      "directory": "lesson5",
+      "items": [
+        {
+          "title": "CSS",
+          "slug": "css",
+          "file": "01-css.md"
+        },
+        {
+          "title": "CSS-in-JS",
+          "slug": "css-in-js",
+          "file": "02-css-in-js.md"
+        },
+        {
+          "title": "Wymiana danych - AJAX",
+          "slug": "ajax",
+          "file": "03-ajax.md"
+        },
+        {
+          "title": "Wersja produkcyjna i publikowanie aplikacji",
+          "slug": "production",
+          "file": "04-production.md"
+        }                        
+      ]
+    }      
+  ]
+}

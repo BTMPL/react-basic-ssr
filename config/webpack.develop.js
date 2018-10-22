@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const rehypePrism = require('@mapbox/rehype-prism');
+const iframe = require('remark-iframes');
 
 
 module.exports = (env) => {
@@ -22,16 +24,37 @@ module.exports = (env) => {
 		},
 		output: {
 			filename: 'bundle.js',
-			path: path.join(__dirname, '..', 'dist')
+			path: path.join(__dirname, '..', 'dist'),
+			publicPath: '/'
 		},
 		plugins: plugins,
 		module: {
 			rules: [
 				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader']
+				},
+				{
 					test: /\.mdx?$/,
 					use: [
-						'babel-loader',
-						'@mdx-js/loader'
+						{ 
+							loader: 'babel-loader' 
+						},
+						{
+							loader: '@mdx-js/loader',
+							options: {
+								mdPlugins:[
+									[iframe, {
+										'codesandbox.io': {
+											tag: 'iframe',
+											append: '?autoresize=1&codemirror=1&hidenavigation=1&editorsize=50&fontsize=12&runonclick=1',
+											disabled: false,
+										}}
+									]
+								],
+								hastPlugins: [rehypePrism]
+							}
+						}
 					]
 				},			
 				{

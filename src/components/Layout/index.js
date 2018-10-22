@@ -1,3 +1,5 @@
+// @ts-check
+
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 
@@ -6,19 +8,25 @@ const Layout = styled.div`
 `;
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
   * {
     box-sizing: border-box;
   }
 
+  html {
+    overflow-y:scroll;
+  }  
+
   body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 15px;
     line-height: 1.5;
     color: #444;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
   }
 
   h1 {
@@ -61,11 +69,24 @@ injectGlobal`
     margin-top: -15px;    
   }
 
+  p code {    
+    padding: 1px 5px;
+    background: #f5f2f0;
+  }
+
   blockquote {
     padding: 1px 15px;
     margin: 15px 0;
     background: #fff7d0;
     border-left: 5px solid #ffe564;
+  }
+
+  iframe[src*="codesandbox"] {
+    width: calc(100% + (100vw - 100%) / 2 - 20px); 
+    height:500px; 
+    border:0; 
+    border-radius: 4px; 
+    overflow:hidden;
   }
 `
 
@@ -81,7 +102,7 @@ export default class extends React.Component {
 }
 
 export const Row = styled.div`
-  max-width: 700px;
+  max-width: ${props => props.full ? 1344 : 700}px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -91,6 +112,7 @@ export const Row = styled.div`
 export const Col = styled.div`
   flex: 1;
   padding: 0 0.875rem;
+  max-width: 100%;
 `;
 
 export const Header = styled.div`

@@ -1,93 +1,88 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { MDXProvider } from '@mdx-js/tag'
 import { Link, Router } from '@reach/router';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
+import 'prismjs/themes/prism.css';
 
 import Layout, { Row, Col, Header } from './components/Layout';
-
 import Hero from './components/Hero';
-import Aside from './components/Aside';
-import Index from './components/Index';
-import Bio from './components/Bio';
+import Footer from './components/Footer';
 
-import Hello from './hello.md';
+import Index from './views/Index';
+import Course from './views/Course/Course';
 
-const P = styled.p`
-  font-size: 16px;
-  color: #444;
-  font-family: Tahoma;
-`
-
-const index = [
-  { name: "Podstawowe pojęcia", slug: "section-1" },
-  { name: "Środowisko NodeJS", slug: "section-2" },
-  { name: "Narzedzia wspomagające", slug: "section-3" },
-  { name: "create react app", slug: "section-4" }
-];
-
-export default () => {
-
-  return (
-    <Layout>
-      <Header>
-        <Row>
-          <Col>
-            :)
-          </Col>
-        </Row>
-      </Header>  
-      <Hero>
-        <Row>
-          <Col>
-            <h1>Hello world</h1>
-            <p>This is cool and pretty :)</p>
-          </Col>
-        </Row>
-      </Hero>
-      <Row>
-        <Col>
-          <Router>
-            <Home path="/" />
-            <Test path="/test" />
-          </Router>
-        </Col>
-      </Row>
-    </Layout>
-  )
-}
-
-export class Home extends React.Component {
+class Scroll extends React.PureComponent {
 
   render() {
-    const padding = 150;
+    return null;
+  }
 
-    return (
-      <Aside aside={
-        <React.Fragment>
-          <Index
-            index={index}
-            padding={padding}
-            selector={({ slug }) => document.querySelector(`a[name=${slug}]`)}
-            onClick={({ slug }) => {
-              window.scrollTo(0, document.querySelector(`a[name=${slug}]`).getBoundingClientRect().top + window.pageYOffset - (padding / 2));
-            }}
-          />
-          <Bio />
-        </React.Fragment>} 
-      fixedStyles={{
-        top: 'calc(50px + 1rem)'
-      }}>      
-        <Hello />
-      </Aside>      
-    );
+
+  componentDidUpdate(props) {
+    if (props['*'] !== this.props['*']) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 }
 
-export const Test = () => {
-  return (
-    <div>
-      <P>Test App</P>
-      <Link to="/">home</Link>
-    </div>
-  )
+export default class Main extends React.Component {
+
+  state = {
+    layout: {
+      title: '',
+      subtitle: '',
+      image: ''
+    }
+  }
+
+  setLayout = layout => {
+    this.setState({
+      layout: {
+        ...this.state.layout,
+        ...layout
+      }
+    });
+  }
+
+  render() {
+    return (
+      <Layout>
+        <Helmet>
+          <title>{[this.state.layout.title, this.state.layout.subtitle].filter(i => i).join(' / ')}</title>
+        </Helmet>      
+        <Header>
+          <Row>
+            <Col>
+              :)
+            </Col>
+          </Row>
+        </Header>  
+        <Hero>
+          <Row>
+            <Col>
+              <h1>{this.state.layout.title}</h1>
+              <p>{this.state.layout.subtitle}</p>
+            </Col>
+          </Row>
+        </Hero>
+        <Row>
+          <Col>
+            <Router>
+              <Index path="/" />
+              <Course path="/kursy/:courseSlug/*" setLayout={this.setLayout} />
+            </Router>
+          </Col>
+        </Row>
+        <Footer />
+        <Router>
+          <Scroll path="/*" />
+        </Router>        
+      </Layout>
+    
+    )
+  }
 }

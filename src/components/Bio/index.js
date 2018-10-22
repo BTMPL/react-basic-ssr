@@ -11,7 +11,7 @@ const Avatar = styled.img`
 `;
 
 const BioElement = styled.div`
-  font-size: 0.875rem;  
+  font-size: 1rem;  
 `;
 
 export default ({

@@ -23,7 +23,7 @@ app.set('view engine', 'pug');
 app.use('/', express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {  
-  const { html, sheet } = renderUrl(req.url);;
+  const { html, sheet } = renderUrl(req.url);
 
   res.render(path.join(__dirname, 'src/public/index.pug'), {
     css: sheet.getStyleTags(),    
