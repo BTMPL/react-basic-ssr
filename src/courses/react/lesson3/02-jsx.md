@@ -9,7 +9,7 @@ Uaktualnijmy zatem naszą aplikację tak, by wyglądała jak typowy Tweet. Dodam
 
 Po zapisaniu zmian na ekranie wyświetli nam się poprawnie sformatowany Tweet - nasz kod JSX został zamieniony na poprawną składnię HTML.
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -36,7 +36,7 @@ Z tej transformacji wynika kilka kilka ważnych ograniczeń JSX:
 *   każde wywołanie `render()` jako parametr wejściowy może przyjąć tylko jeden element JSX (ale - elementem tym może być tablica elementów, lub element zawierający wiele innych elementów)
 *   każdy znak musi zawierać się w znaczniku HTML, dlatego jeżeli chcemy wyrenderować spację pomiędzy dwoma elementami musimy użyć notacji  .
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
             
@@ -70,7 +70,7 @@ W kodzie JSX istnieje możliwość używania nie tylko stringów i znaczników H
 
 Zmodyfikujmy zatem nasz kod tak, by data była zawsze aktualna:
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 

@@ -6,7 +6,7 @@ Praca z obiektami stała się także o wiele wygodniejsza - głównie za pośred
 
 Jeżeli chcemy zadeklarować obiekt, który używać będzie zmiennych dla wartości kluczy, a nazwa tych kluczy powinna być taka sama jak nazwa zmiennych możemy pominąć ich wartość w czasie deklarowania.
 
-```js
+```html
 const test = 42;
 const obj = {
   test
@@ -18,7 +18,7 @@ console.log(obj.test); // 42
 
 Często zdarza się również, że chcemy utworzyć klucze w oparciu o nazwy zmiennych - do tej pory mogliśmy wpierw utworzyć obiekt, a następnie używając dostępu tablicowego dodać wartość. Teraz możliwe jest bezpośrednie tworzenie takich kluczy.
 
-```js
+```html
 const test = "myKey";
 const obj = {
   [test]: 42
@@ -32,7 +32,7 @@ Pojawia się także nowa składnia pozwalająca na kopiowanie obiektów - zastę
 
 ES6 obsługuję te notację jedynie w przypadku tablic, ale istnieje proposal dodający wsparcie również w przypadku obiektów. W świecie React jest on na tyle popularny, że warto o nim wspomnieć.
 
-```js
+```html
 const source = [1, 2];
 const copy = [...source]; // [1, 2];
 const append = [...source, 3]; // [1, 2, 3];
@@ -46,7 +46,7 @@ const copyWithOverwrite = { ...obj, test2: 3 }; // { test: 1, test2: 3 }
 > #### Uwaga
 > Kopie tego typu są kopiami płytkimi - w przypadku wielowymiarowych tablic, tablic obiektów etc. uzyskamy kopię referencji. Uważajmy więc, by nie mutować oryginalnych danych!
 
-> ```js
+> ```html
 > const source = [
 >   { test: 1 }
 > ];

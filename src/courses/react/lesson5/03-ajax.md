@@ -22,7 +22,7 @@ Dodatkowo, w naszej metodzie `addTweet` dodajemy przesyłanie danych do serwera 
 
 Rozwiązanie tego typu nazywamy "pesymistycznym aktualizowaniem". Jego przeciwieństwo - "optymistyczne aktualizowanie" - polega na dodaniu elementu do stanu lokalnego i "zaufaniu" że dane dotrą do serwera i zostaną pomyślnie zapisane. Oczywiście możemy zaimplementować też ponawianie niepomyślnych zapytań etc.
 
-!(https://codesandbox.io/embed/91knw1ll64)
+[codesandbox](https://codesandbox.io/embed/91knw1ll64)
 
 ### CORS
 

@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const rehypePrism = require('@mapbox/rehype-prism');
-const iframe = require('remark-iframes');
-
 
 module.exports = (env) => {
 	const e = env || process.env;
@@ -41,19 +39,7 @@ module.exports = (env) => {
 							loader: 'babel-loader' 
 						},
 						{
-							loader: '@mdx-js/loader',
-							options: {
-								mdPlugins:[
-									[iframe, {
-										'codesandbox.io': {
-											tag: 'iframe',
-											append: '?autoresize=1&codemirror=1&hidenavigation=1&editorsize=50&fontsize=12&runonclick=1',
-											disabled: false,
-										}}
-									]
-								],
-								hastPlugins: [rehypePrism]
-							}
+							loader: 'mdx-loader',
 						}
 					]
 				},			

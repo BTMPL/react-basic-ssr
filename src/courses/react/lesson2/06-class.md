@@ -1,6 +1,6 @@
 Klasy wprowadzone w ES2015 nie są pełnoprawnym konstruktem, tak jak ma to miejsce w językach programowania zorientowanych obiektowo (ang. Object Oriented) - stanowią one jedynie warstwę abstrakcji nad standardowym dla JS dziedziczeniem opartym o dziedziczenie prototypowe.
 
-```js
+```html
 // kod ES6
 class Person {
   constructor(name) {
@@ -11,7 +11,7 @@ class Person {
 const obj = new Person("Bartek");
 ```
 
-```js
+```html
 // kod ES5
 function _classCallCheck(instance, Constructor) { 
   if (!(instance instanceof Constructor)) { 
@@ -35,7 +35,7 @@ W celu zdefiniowania wartości statycznych, używamy notacji `NazwaKlasy.nazwaPo
 > #### Uwaga
 > Definicje klasy nie są hoistowane - oznacza to, że w odróżnieniu od funkcji, nie jesteśmy w stanie użyć klasy, a następnie ją zdefiniować.
 
-```js
+```html
 // błąd! klasa nie została jeszcze zdefiniowana
 const blad = new Person();
 
@@ -69,7 +69,7 @@ W aktualnej wersji JS nie możemy korzystać z określeń typu `static` etc. czy
 
 Jest to zabieg który znacznie ułatwi nam pracę z komponentami klasowymi więc jest zdecydowanie zalecany.
 
-```js
+```html
 class Person {
   // zamiast używać this.name w konstruktorze dla wartości nie-dynamicznych
   name = '';

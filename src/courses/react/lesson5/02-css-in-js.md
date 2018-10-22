@@ -15,7 +15,7 @@ Rozwiązanie takie działa dwu etapowo:
 *   na podstawie przekazanego CSS tworzy nową klasę z "pseudo losową" nazwą taki selektor dodaje do elementu
 *   tworzy nowy element na podstawie przekazanego (w tym wypadku element HTML `<button>`) i przekazuje mu wcześniej wygenerowaną klasę jako prop `className`
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
@@ -38,7 +38,7 @@ Rozwiązanie takie umożliwia zatem kilka innych ciekawych zastosować takich ja
 
 Dodatkowo, przy wykorzystaniu mechanizmu `<ThemeProvider>` możemy przygotować zestaw zmiennych zawierających kolory, rozmiary, marginesy etc. i następnie dynamicznie podmieniać je w czasie pracy aplikacji.
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";              

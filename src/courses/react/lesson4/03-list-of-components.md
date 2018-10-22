@@ -4,7 +4,7 @@ W składni JSX możemy zwrócić, albo osadzić tablicę elementów, co pomoże 
 
 Przykład ten zadziała dokładnie tak jak oczekujemy i wyrenderuje trzy kopie tego samego elementu `Tweet`, jednak jeżeli zajrzymy do konsoli zobaczymy, że React wygenerował komunikat błędu informujący o braku unikatowego propu `key` na każdym z elementów tablicy.
 
-```jsx
+```html
 Warning: Each child in an array or iterator should have a unique "key" prop.
 ```
 

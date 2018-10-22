@@ -8,7 +8,7 @@ Dodajmy więc nieco CSS do naszej aplikacji. Zwróć uwagę na stosowanie odpowi
 
 Rozwiązanie to działa, ale nie jest najlepsze - nasze style dodawane są do generowanych elementów HTML - nie ma możliwości ich nadpisania, nie możemy stosować pseudoselektorów (np. `:hover`) i powtarzają się one w kodzie wieloktrotnie.
 
-!(https://codesandbox.io/embed/z2k8w9qv2m)
+[codesandbox](https://codesandbox.io/embed/z2k8w9qv2m)
 
 ### Klasy CSS
 
@@ -38,7 +38,7 @@ Przykładowa zawartość pliku `style.css`:
 }   
 ```
 
-!(https://codesandbox.io/embed/qxym1n1z06)
+[codesandbox](https://codesandbox.io/embed/qxym1n1z06)
 
 ### css-modules
 
@@ -61,7 +61,7 @@ W celu skorzystania z css-modules musimy zmodyfikować nieco proces, w który im
 
 Możemy użyć css-loader i css-modules w następując sposób:
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 

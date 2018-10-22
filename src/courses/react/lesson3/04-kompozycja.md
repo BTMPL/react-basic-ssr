@@ -4,7 +4,7 @@ Nie musimy od razu wiedzieć w jaki sposób będą one wykorzystywane - tutaj pr
 
 Wydzielmy zatem z naszego komponentu Tweet obiekty, które na pewno przydadzą nam się gdzie indziej: komponent wskazujący czas oraz komponent wskazujący autora Tweetu.
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 

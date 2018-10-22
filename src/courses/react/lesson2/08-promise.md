@@ -14,7 +14,7 @@ W celu "zasubskrybowania" pomyślnego wykonania się Promise, na zwróconym obie
 
 Samo Promise powinno zaś wywołać `resolve` jeżeli wszystko zakończyło się sukcesem, lub `reject` jeżeli operacja nie powiodła się. Wartość, z jaką zostaną wywołane w/w funkcje przekazywana jest odpowiednio do `then` oraz `catch`.
 
-```js
+```html
 const getPromise = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -34,7 +34,7 @@ Promise może występować jedynie w jedynym z 3 stanów: nie wykonany, wykonany
 
 Możliwe jest także utworzenie Promise które od razu będzie wykonane pomyślnie lub niepomyślnie używając `Promise.resolve()` lub`Promise.reject()`
 
-```js
+```html
 const resolvedPromise = Promise.resolve();
 resolvedPromise.then(() => alert('Promise pomyślny!'));
 
@@ -45,7 +45,7 @@ rejectedPromise.catch(() => alert('Promise zakonczony niepowodzeniem!'));
 
 Promisy mogą być także łączone w łańcuchy (ang. chained) - jeżeli funkcja przekazana w `then` zwróci cokolwiek innego niż wartość falsy lub odrzucone Promise, kolejny `then` zostanie wykonany (i odpowiednio dla łańcuchów `catch`).
 
-```js
+```html
 const resolvedPromise = Promise.resolve();
 resolvedPromise.then(() => {
     alert('Pierwszy Promise pomyślny!');
@@ -58,7 +58,7 @@ Dodatkowo, obiekt Promise zawiera dwa mechanizmy pozwalające na pracę z wielom
 `Promise.all([Promise])` - utworzy Promise, który wykona się w momencie, kiedy wszystkie przekazane obiekty Promise wykonają się  
 .`Promise.race([Promise])` - wywoła się w momencie, w którym wywoła się pierwszy z przekazanych obiektów Promise.
 
-```js
+```html
 Promise.all([
   new Promise(res => setTimeout(() => res(42), 1000)), // wykonaj po 1 sekundzie,
   new Promise(res => setTimeout(() => res(64), 2000)) // wykonaj po 2 sekundach
@@ -67,7 +67,7 @@ Promise.all([
 });
 ```
 
-```js
+```html
 Promise.race([
   new Promise(res => setTimeout(() => res(42), 1000)), // wykonaj po 1 sekundzie,
   new Promise(res => setTimeout(() => res(64), 2000)) // wykonaj po 2 sekundach

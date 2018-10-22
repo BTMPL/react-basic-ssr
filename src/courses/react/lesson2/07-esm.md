@@ -15,7 +15,7 @@ Plik, który eksportuje dane w formacie CommonJS używa notacji `module.exports`
 
 Wszelkie wyeksportowane dane mogą zostać zaimportowane przez dowolny inny moduł/aplikację, zaś dane, które nie są eksportowane są stosowane jako prywatne API modułu i jeżeli nie udostępnimy interfejsu do ich modyfikacji nie będą one mogły być w żaden sposób modyfikowane.
 
-```js
+```html
 // Math.js
 
 const PI = 3.14;
@@ -35,7 +35,7 @@ W celu uzyskania dostępu do wyeksportowanych danych z innego modułu używamy f
 
 Domyślnie, jeżeli ścieżka do importowanego pliku nie zaczyna się od `.` oznacza to, że moduł powinien zostać odszukany w folderze `node_modules`. Zachowanie to może zostać zmodyfikowane w konfiguracji webpacka.
 
-```js
+```html
 const MyMath = require('./Math.js');
 console.log(MyMath.PI); // 3.14;
 
@@ -59,7 +59,7 @@ ES6 definiuje własny format modułów, zachowujący ideę CommonJS ale wprowadz
 
 Odpowiednik kodu z poprzednich listingów stosujący zapis `export`:
 
-```js
+```html
 // Math.js
 
 export const PI = 3.14;
@@ -79,7 +79,7 @@ Odpowiednio, zamiast `require` używamy konstruktu `import`. Należy zwrócić u
 > #### Uwaga
 > Pomimo że importowanie nazwanych eksportów wygląda podobnie do destrukturyzowania nie jest nim - nie można w ten sposób wydobyć pól składowych eksportu domyślnego.
 
-```js
+```html
 import { PI } from "./Math.js";
 console.log(PI); // 3.14;
 

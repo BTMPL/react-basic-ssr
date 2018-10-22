@@ -2,7 +2,7 @@ Funkcje mogą od teraz deklarować wartości domyślne dla parametrów, dzięki 
 
 W odróżnieniu od innych języków, wartości domyślne mogą być dodane do dowolnej zmiennej, nie ma konieczności definiowania wartości domyślnych do wszystkich zmiennych kolejnych po tej, która deklaruje swoją wartość domyślną. W JS wszystkie nie przekazane zmienne otrzymują wartość `undefined`.
 
-```js
+```html
 function test(a, b = 42, c) {
   console.log(a, b, c);
 }
@@ -15,7 +15,7 @@ Destrukturozywanie przydaje się wszędzie tam, gdzie wiemy, że funkcja wywoły
 
 Oczywiście i w tym wypadku możemy nadać zmiennym wartości domyślne.
 
-```js
+```html
 function testObject({ jeden = 42 }) {
   console.log(jeden);
 }
@@ -33,7 +33,7 @@ testArray(["jeden", "dwa"]); // "jeden"
 
 Istnieje także możliwość przechwycenia wielu parametrów do jednej zmiennej. Możemy przechwycić wszystkie parametry, lub zadeklarować listę parametrów, które chcemy pobrać oddzielnie, oraz pobrać pozostałe do tablicy.
 
-```js
+```html
 function test(...input) {
   console.log(input);
 }              

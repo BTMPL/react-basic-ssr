@@ -4,7 +4,7 @@ ES6 wprowadza dwa nowe typy zmiennych - `const` oraz `let`. Oba są widoczne jed
 
 Jeżeli chcemy by nasz obiekt był całkowicie nie mutowalny, możemy użyć `Object.freeze`
 
-```js
+```html
 const a = 42;
 a = 43; // błąd - nie można zmienić przypisania
 
@@ -23,7 +23,7 @@ d.push(42); // poprawnie
 
 Dodatkową różnicą jest to, że w przypadku stosowania closure wartości zmiennej będą kopiowane, a nie przekazywane przez referencję.
 
-```js
+```html
 if(true) {
   var a = 42;
   let b = 42;

@@ -4,7 +4,7 @@ Dodatkową właściwością jest to, że w przypadku kiedy ciało funkcji skład
 
 Automatyczne przechwytywanie `this` działa dokładnie tak samo jak użycie funkcji prototypowej `Function.prototype.bind` ale pozwala nam "nie martwić" się o to. Minusem może okazać się to, że nie możemy zmienić `this`, jakie przypisane jest do funkcji tego typu.
 
-```js
+```html
 function a() {
   setTimeout(function() { console.log(this) })                
 }
@@ -21,7 +21,7 @@ Jeżeli funkcja posiada tylko jedno wyrażenie, możemy pominąć nawiasy `{}` a
 
 Składnia ulega nieco zmianie, jeżeli nasza funkcja powinna zwrócić obiekt.
 
-```js
+```html
 const a = () => 42;
 console.log(a()); // 42
 

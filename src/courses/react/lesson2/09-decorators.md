@@ -15,7 +15,7 @@ Deskryptor zaś składa się z 4 pól, które możemy mutować:
 *   writable - bool - określa, czy obiekt można nadpisać
 *   value - mixed - referencja do obiektu
 
-```js
+```html
 const time = (target, name, descriptor) => {
   const original = descriptor.value;
   // Użyj function by umożliwić późne wiązanie this

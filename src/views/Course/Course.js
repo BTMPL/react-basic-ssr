@@ -5,6 +5,8 @@ import Index from '../../components/Index';
 import Bio from '../../components/Bio';
 import Loading from '../../components/Loading';
 
+import { factories } from '../../mdx';
+
 export default class Course extends React.PureComponent {
 
   state = {
@@ -105,6 +107,8 @@ export default class Course extends React.PureComponent {
       return <Loading />;
     }
 
+    const Content = this.state.content;
+
     return (
       <React.Fragment>
         <Aside aside={
@@ -115,10 +119,8 @@ export default class Course extends React.PureComponent {
             />
             <Bio />
           </React.Fragment>} 
-        fixedStyles={{
-          top: 'calc(50px + 1rem)'
-        }}>      
-          {this.state.content ? React.createElement(this.state.content) : <Loading />}
+        >      
+          {this.state.content ? <Content factories={factories} /> : <Loading />}
         </Aside>       
       </React.Fragment>
     );

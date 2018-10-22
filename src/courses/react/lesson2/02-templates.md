@@ -18,7 +18,7 @@ const c = `łańcuch z osadzoną zmienną: ${a}`
 
 Template literals można użyć także do wywołania funkcji - zapis ten może wydawać się nieco dziwny, ale jest on popularny w niektórych rozwiązaniach np. w bibliotece styled-components
 
-```js
+```html
 function logToConsole(input) {
   console.log("Loguję: ", input);
 }            

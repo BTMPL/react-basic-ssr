@@ -5,7 +5,7 @@ kodu źródłowego napisanego w jednym języku na inny. Dzięki odpowiednim "pre
 
 Należy pamiętać, iż o ile babel pozwala nam na dodanie funkcjonalności, która nie jest jeszcze oficjalnym standardem ECMAScript, o tyle musimy liczyć się z tym, że używana w tym wypadku przez nas funkcjonalność (lub jej składnia) może ulec zmianie lub zostać ostatecznie odrzucona.
 
-```js
+```html
 // .babelrc
 {
   presets: ["env", "react"],
@@ -23,7 +23,7 @@ Zastępuje on rozwiązania takie jak gulp, grunt czy browserify - jest w stanie 
 
 Webpack uruchamiany jest w środowisku developerskim, lub w celu stworzenia produkcyjnej wersji aplikacji, dlatego też musi on mieć dostęp do wszystkich materiałów, które chcemy na stałe zapisać w publicznych plikach aplikacji. Tak wygenerowane pliki następnie umieszczamy na dowolnym serwerze HTTP w celu udostępnienia w Internecie.
 
-```js
+```html
 // webpack.config.js
 module.exports = {
   entry: ["./src/index.js"],

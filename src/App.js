@@ -1,5 +1,4 @@
 import React, { createContext } from 'react';
-import { MDXProvider } from '@mdx-js/tag'
 import { Link, Router } from '@reach/router';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';

@@ -4,7 +4,7 @@ React wyróżnia dwa typu komponentów: komponent bezstanowy (ang. stateless fun
 
 Utwórzmy zatem funkcję i zapiszmy ją do zmiennej `Tweet` (możesz również stworzyć normalną funkcję używając składni `function`ale dobrze jest znać różnice pomiędzy tymi dwiema składniami) i przenieśmy do niej nasz kod HTML. Funkcja ta po prostu zwraca kod JSX.
 
-```jsx
+```html
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -29,7 +29,7 @@ Następnym krokiem jest usunięcie tego kodu z wywołania `ReactDOM.render` i za
 
 Na skutek tej operacji zaktualizowany zostanie kod JS - zwróć uwagę, że dookoła `Tweet` nie ma w nim cudzysłowu.
 
-```js
+```html
 ReactDOM.render(
   React.createElement(Tweet, null), 
   document.getElementById('root')
@@ -48,7 +48,7 @@ Przy okazji usunęliśmy generowanie daty z samego JSX przez co nasz kod stał s
 
 Komponenty stanowe są nieznacznie wolniejsze niż komponenty bezstanowe dlatego wiele poradników lub presetów do ESlint zaleca ich stosowanie, jednak wybór ten nie wpływa na wydajność w aż tak znaczącym stopniu.
 
-```jsx
+```html
 class Tweet extends React.Component {
 
   render() {
@@ -71,7 +71,7 @@ class Tweet extends React.Component {
 
 Możemy teraz wyrenderować listę kilku Tweetów, przekazując do ReactDOM.render tablicę obiektów lub tworząc jeden dodatkowy znacznik HTML, w którym przekażemy listę naszych Tweetów.
 
-```js
+```html
 ReactDOM.render(
   <div>
     <Tweet />
