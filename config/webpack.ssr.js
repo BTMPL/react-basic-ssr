@@ -28,11 +28,12 @@ module.exports = (env) => {
 		module: {
 			rules: [
 				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader']
+				},				
+				{
 					test: /\.mdx?$/,
-					use: [
-						'babel-loader',
-						'@mdx-js/loader'
-					]
+					use: ['babel-loader', 'mdx-loader']
 				},			
 				{
 					test: /\.js$/,

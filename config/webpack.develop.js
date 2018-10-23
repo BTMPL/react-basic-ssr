@@ -34,14 +34,7 @@ module.exports = (env) => {
 				},
 				{
 					test: /\.mdx?$/,
-					use: [
-						{ 
-							loader: 'babel-loader' 
-						},
-						{
-							loader: 'mdx-loader',
-						}
-					]
+					use: ['babel-loader', 'mdx-loader']
 				},			
 				{
 					test: /\.js$/,

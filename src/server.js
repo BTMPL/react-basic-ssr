@@ -15,7 +15,8 @@ export default function(url) {
           <div>
             <Home />
           </div>
-      </ServerLocation>
-    </StyleSheetManager>)
+        </ServerLocation>
+      </StyleSheetManager>
+    )
   }
 };

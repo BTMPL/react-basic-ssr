@@ -50,7 +50,7 @@ injectGlobal`
 
   pre {
     overflow: auto;
-    max-width: 700px;
+    max-width: 900px;
     background: #000;
     padding: 5px 10px;
     color: white;
@@ -102,7 +102,7 @@ export default class extends React.Component {
 }
 
 export const Row = styled.div`
-  max-width: ${props => props.full ? 1344 : 700}px;
+  max-width: ${props => props.full ? 1344 : 900}px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -129,4 +129,13 @@ export const Header = styled.div`
   justify-content: center;
   height: 50px;
   box-sizing: border-box;
+
+  text-align: right;
+
+  a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
 `;

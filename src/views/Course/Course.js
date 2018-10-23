@@ -12,10 +12,6 @@ export default class Course extends React.PureComponent {
   state = {
     course: undefined
   }
-
-  componentDidMount() {
-    this.setup.apply(this, [this.props.courseSlug, ...(this.props['*'] || '').split('/')]);
-  }
  
   setup = (courseSlug, lessonSlug, sectionSlug) => {
     Promise.all([
@@ -72,6 +68,10 @@ export default class Course extends React.PureComponent {
       })      
     });
   }
+
+  componentDidMount() {
+    this.setup.apply(this, [this.props.courseSlug, ...(this.props['*'] || '').split('/')]);
+  }  
 
   componentDidUpdate(prevProps) {
     if (prevProps.courseSlug !== this.props.courseSlug) {
